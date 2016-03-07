@@ -72,7 +72,7 @@
 - Drag Stopwords dataset link to and run python normaliaztion script
 - Make TwoClassLabel a label
 - Make PMID a clear feature
-- Hash Features
+- Hash Features and run expierment
 - Project Features
 
 ## Train Model##
