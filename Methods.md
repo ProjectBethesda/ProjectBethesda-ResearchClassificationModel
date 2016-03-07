@@ -2,6 +2,7 @@
 
 ##Prerequisites##
 * [Download Mendelian Pubmed Dataset] (tbi)
+* [Download Stop Words CSV] (tbi)
 * [Create a Free Microsoft Azure Subscription](https://azure.microsoft.com/en-us/free/)
 
 ##Contents##
