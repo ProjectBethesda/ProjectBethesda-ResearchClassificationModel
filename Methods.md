@@ -20,13 +20,23 @@
 - Drag Dataset into expierment
 - Grab Data Using SQL selector 
 - Drop Stopwords into experiment 
-- Execute normaliaztion script
+- Execute Normaliaztion script
 - Make TwoClassLabel a label
 - Make PMID a clear feature
 - Hash Features
 - Project Features
 
 ## Train Model##
-- 
+- Train/Test Split
+- Configure Two Class Decision Tree
+- Drag in One Vs All Classifier
+- Train Model
+
+##Benchmark##
+- Score Model
+- Evaluate Model
+
+##Put Into Production##
+
 
 
