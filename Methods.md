@@ -17,9 +17,16 @@
 - Create & Name New Expierment 
 
 ## Normalize Dataset##
-- Drag Dataset into Expierment
-- Setup SQL Selector
+- Drag Dataset into expierment
+- Grab Data Using SQL selector 
+- Drop Stopwords into experiment 
+- Execute normaliaztion script
+- Make TwoClassLabel a label
+- Make PMID a clear feature
+- Hash Features
+- Project Features
 
-
+## Train Model##
+- 
 
 
