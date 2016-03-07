@@ -18,7 +18,8 @@
 
 ## Normalize Dataset##
 - Drag Dataset into Expierment
-- 
+- Setup SQL Selector
+
 
 
 
