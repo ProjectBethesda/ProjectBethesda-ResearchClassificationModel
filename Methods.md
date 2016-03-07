@@ -16,7 +16,7 @@
 - Upload Dataset
 - Create & Name New Expierment 
 
-## Normalize Dataset
+## Normalize Dataset##
 - Drag Dataset into Expierment
 - 
 
