@@ -69,7 +69,7 @@
 ## Feature Selection ##
 - Drag Dataset into expierment
 - Grab Data Using SQL selector 
-- Drop Stopwords link  python normaliaztion script
+- Drag Stopwords dataset link to and run python normaliaztion script
 - Make TwoClassLabel a label
 - Make PMID a clear feature
 - Hash Features
