@@ -7,12 +7,13 @@
 
 ##Contents##
 1. **Setup Workspace**
+2. **Getting Data into an Experiment**
 2. **Feature Selection**
 3. **Train Model**
 4. **Benchmark**
 5. **Put Into Production**
 
-## Setup Workspace##
+##1. Setup Workspace##
 ***Step 1: Navigate to ML tab in Azure Portal***
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/Create%20New%20Workspace.jpg)
 
@@ -25,7 +26,8 @@
 ***Step 3: Sign into ML Studio***
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/signInToMLStudio.jpg)
 
-##4. Getting Data into an Experiment##
+##2. Getting Data into an Experiment##
+
 ***Step 1: Navigate to the Datasets tab in ML Studio and Click New***
 ![alt tag]()
 
@@ -49,26 +51,23 @@
 ***Step 5: Create a New Blank Experiment***
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/newExpierment1.jpg)
 
-***Step 6: Name the Experiment and Import Curated Dataset***
-
+***Step 6: Name the Experiment ***
 * Rename the experiment to Bethesda
-* Expand Saved Datasets -> My Datasets and Drag our data on to the page
-
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/nameExpierment1.jpg)
 
-***Step 7: Right Click the Bottom of Dataset and Select Visualize***
-![alt tag]()
-
-***Step 8: Visualize your dataset***
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/visualize.jpg)
-* Visualizing a dataset allows you to see useful analytics and gauge relationships between features.
-
-
-## Feature Selection ##
-***Step 1: Drag Dataset into expierment***
+***Step 7: Drag the dataset into the expierment***
+* Expand Saved Datasets -> My Datasets and Drag our data on to the page
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/dragDataSet.jpg)
 
-***Step 2: Grab Data Using SQL transformation***
+***Step 8: Visualize your dataset***
+* Right Click the Bottom of Dataset and Select Visualize
+* Visualizing a dataset allows you to see useful analytics and gauge relationships between features.
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/visualize.jpg)
+
+
+##3. Feature Selection ##
+
+***Step 1: Grab Data Using SQL transformation***
  * Drag the SQL sql transformation module into the expierment
  * Enter the following query into the module
    ```sql
@@ -82,7 +81,7 @@
  * Connect the module as follows 
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/sql%20transformation.jpg)
 
-***Step 3:Normalization***
+***Step 2:Normalization***
  * Drag Stopwords dataset into the expierment
  * Drag the python script module into the expierment
  * Put the following python code normalization snipped into the expierment
@@ -129,27 +128,27 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
  * Link the modules as follows and run the expierment 
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/stop%20words%20and%20python.jpg)
 
-*** Step 4: Make TwoClassLabel a label***
+*** Step 3: Make TwoClassLabel a label***
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%201.jpg)
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%202.jpg)
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%203.jpg)
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%204.jpg)
 
-*** Step 5: Make PMID a clear feature***
+*** Step 4: Make PMID a clear feature***
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/pmid1.jpg)
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/pmid2.jpg)
 
-*** Step 6: Hash Features and run expierment***
+*** Step 5: Hash Features and run expierment***
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing.jpg)
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing2.jpg)
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing3.jpg)
 
-*** Step 7: Project Features***
+*** Step 6: Project Features***
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featureselectionprojection.jpg)
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featureselectionprojection2.jpg)
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featureselectionprojection3.jpg)
 
-## Train Model##
+##4. Train Model##
 *** Step 1: Train/Test Split***
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/testtrainsplit.jpg)
 
@@ -172,7 +171,7 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 * run the expierment and visualize the evaluate module
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/ProjectBethesdaML%20Results.png)
 
-##Put Into Production##
+##5. Put Into Production##
 *** Step 1: Set up Predictive Webservice
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/set%20up%20predictive%20webservice.jpg)
 
