@@ -1,8 +1,8 @@
 #Classifing Mendilian Medical Literature With Azure ML#
 
 ##Prerequisites##
-* [Download Mendelian Pubmed Dataset] (tbi)
-* [Download Stop Words CSV] (tbi)
+* [Download Mendelian Pubmed Dataset] (https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/datasets/Project%20Bethesda%20DataSet%20Normalized.csv)
+* [Download Stop Words CSV] (https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/datasets/Stopwords.csv)
 * [Create a Free Microsoft Azure Subscription](https://azure.microsoft.com/en-us/free/)
 
 ##Contents##
@@ -17,12 +17,10 @@
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/Create%20New%20Workspace.jpg)
 
 ***Step 2: Create an ML Workspace***
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/Create%20New%20Workspace1.jpg)
-
 * Choose a unique Workspace name
 * Associate a pre-existing storage account or follow the steps to create your own.
 * Select the South Central U.S. Datacenter
-
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/Create%20New%20Workspace1.jpg)
 
 ***Step 3: Sign into ML Studio***
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/signInToMLStudio.jpg)
@@ -67,10 +65,10 @@
 
 
 ## Feature Selection ##
-**Step 1: Drag Dataset into expierment**
+***Step 1: Drag Dataset into expierment***
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/dragDataSet.jpg)
 
-**Step 2: Grab Data Using SQL transformation**
+***Step 2: Grab Data Using SQL transformation***
  * Drag the SQL sql transformation module into the expierment
  * Enter the following query into the module
    ```sql
@@ -84,7 +82,7 @@
  * Connect the module as follows 
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/sql%20transformation.jpg)
 
-**Step 3:Normalization**
+***Step 3:Normalization***
  * Drag Stopwords dataset into the expierment
  * Drag the python script module into the expierment
  * Put the following python code normalization snipped into the expierment
@@ -131,32 +129,70 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
  * Link the modules as follows and run the expierment 
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/stop%20words%20and%20python.jpg)
 
-**Step 4: Make TwoClassLabel a label**
+*** Step 4: Make TwoClassLabel a label***
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%201.jpg)
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%202.jpg)
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%203.jpg)
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%204.jpg)
 
-**Step 5: Make PMID a clear feature**
-![alt tag]()
+*** Step 5: Make PMID a clear feature***
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/pmid1.jpg)
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/pmid2.jpg)
 
-**Step 6: Hash Features and run expierment**
-![alt tag]()
+*** Step 6: Hash Features and run expierment***
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing.jpg)
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing2.jpg)
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing3.jpg)
 
-**Step 7: Project Features**
-![alt tag]()
+*** Step 7: Project Features***
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featureselectionprojection.jpg)
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featureselectionprojection2.jpg)
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featureselectionprojection3.jpg)
 
 ## Train Model##
-- Train/Test Split
-- Configure Two Class Decision Tree
-- Drag in One Vs All Classifier
-- Train Model
+*** Step 1: Train/Test Split***
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/testtrainsplit.jpg)
 
-##Benchmark##
-- Score Model
-- Evaluate Model
+*** Step 2: Drag in One Vs All Classifier***
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/onevsall.jpg)
+
+*** Step 3: Configure Two Class Decision Tree***
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/decison%20tree.jpg)
+
+*** Step 4: Train Model***
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/train1.jpg)
+
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/train2.jpg)
+
+*** Step 5: Score and Evaluate Model***
+* drag score module into expierment
+* link trained model and test set to to the score module 
+* drag the evaluate module to the expierment and link the score module
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/score%20evaluate.jpg)
+* run the expierment and visualize the evaluate module
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/ProjectBethesdaML%20Results.png)
 
 ##Put Into Production##
+*** Step 1: Set up Predictive Webservice
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/set%20up%20predictive%20webservice.jpg)
 
+*** Step 2: Project service inputs ***
+* this will allow you to classify by article abstract and title while using the PMID as an identifier
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/project%20service%20inputs.jpg)
 
+*** Step 3: Project service outputs and run predictive expirement***
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/project%20service%20outputs.jpg)
 
+*** Step 4: Deploy Webservice***
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/deploy%20as%20web%20service.jpg)
+
+*** Step 5: Test webservice***
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/test1.jpg)
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/test2.jpg)
+
+*** Step 6: Get code for webservice***
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/samplecode.jpg)
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/samplecode1.jpg)
+
+![alt tag]()
+![alt tag]()
