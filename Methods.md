@@ -14,10 +14,10 @@
 
 ## Setup Workspace##
 ***Step 1: Navigate to ML tab in Azure Portal***
-![alt tag]()
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/Create%20New%20Workspace.jpg)
 
 ***Step 2: Create an ML Workspace***
-![alt tag]()
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/Create%20New%20Workspace1.jpg)
 
 * Choose a unique Workspace name
 * Associate a pre-existing storage account or follow the steps to create your own.
@@ -25,7 +25,7 @@
 
 
 ***Step 3: Sign into ML Studio***
-![alt tag]()
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/signInToMLStudio.jpg)
 
 ##4. Getting Data into an Experiment##
 ***Step 1: Navigate to the Datasets tab in ML Studio and Click New***
@@ -33,7 +33,7 @@
 
 ***Step 2: Select from local file***
 
-![alt tag]()
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/newDataset1.jpg)
 
 ***Step 3: Upload Datasets***
 
@@ -43,37 +43,108 @@
 * Click the Checkmark
 * Upload stopwords.csv using the same process
 
-![alt tag]()
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/newDataset2.jpg)
 
 ***Step 4: Navigate to the Experiments tab in ML Studio and Click New***
-![alt tag]()
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/newExpierment.jpg)
 
 ***Step 5: Create a New Blank Experiment***
-![alt tag]()
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/newExpierment1.jpg)
 
 ***Step 6: Name the Experiment and Import Curated Dataset***
 
 * Rename the experiment to Bethesda
 * Expand Saved Datasets -> My Datasets and Drag our data on to the page
 
-![alt tag]()
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/nameExpierment1.jpg)
 
 ***Step 7: Right Click the Bottom of Dataset and Select Visualize***
 ![alt tag]()
 
 ***Step 8: Visualize your dataset***
-![alt tag]()
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/visualize.jpg)
 * Visualizing a dataset allows you to see useful analytics and gauge relationships between features.
 
 
 ## Feature Selection ##
-- Drag Dataset into expierment
-- Grab Data Using SQL selector 
-- Drag Stopwords dataset link to and run python normaliaztion script
-- Make TwoClassLabel a label
-- Make PMID a clear feature
-- Hash Features and run expierment
-- Project Features
+**Step 1: Drag Dataset into expierment**
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/dragDataSet.jpg)
+
+**Step 2: Grab Data Using SQL transformation**
+ * Drag the SQL sql transformation module into the expierment
+ * Enter the following query into the module
+   ```sql
+  select 
+  PMID,
+  Title ||  ' ' ||  Abstract
+   as TextInput,
+   [Research Phase Id]  as TwoClassLabel
+   from t1;
+```
+ * Connect the module as follows 
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/sql%20transformation.jpg)
+
+**Step 3:Normalization**
+ * Drag Stopwords dataset into the expierment
+ * Drag the python script module into the expierment
+ * Put the following python code normalization snipped into the expierment
+```python
+# The script MUST contain a function named azureml_main
+# which is the entry point for this module.
+#
+# The entry point function can contain up to two input arguments:
+#   Param<dataframe1>: a pandas.DataFrame
+#   Param<dataframe2>: a pandas.DataFrame
+def azureml_main(dataframe1 = None, dataframe2 = None):
+    import re
+   
+# Create normalized abstract entry 
+    dataframe1["Normalized"]= dataframe1["TextInput"]
+   
+    numWords=[ "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen","twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety","hundred", "thousand", "million", "billion", "trillion"] 
+  
+    for i in range( len(dataframe1["TextInput"])):
+       Abstract = dataframe1["TextInput"][i]
+       if(Abstract!= None):
+        #to lower
+        abstract = Abstract.lower()
+        #remove punctuation
+        abstract =re.findall(r'\w+', abstract,flags = re.UNICODE | re.LOCALE) 
+        #remove stand alone numbers
+        
+        abstract = " ".join([x for x in abstract if not x.isdigit()])
+        #remove stand alone numbers and number words    
+        abstract=" ".join(filter(lambda w: not w in numWords ,abstract.split(" ")))    
+
+        #remove stop words
+        NormAbs= " ".join(filter(lambda w: not w in set(dataframe2["StopWords"]),abstract.split(" ")))
+        
+       else:
+         NormAbs=''
+         abstract=''
+       dataframe1["Normalized"][i]= str(NormAbs)
+      
+    # Return value must be of a sequence of pandas.DataFrame
+    return dataframe1,
+    
+```
+ * Link the modules as follows and run the expierment 
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/stop%20words%20and%20python.jpg)
+
+**Step 4: Make TwoClassLabel a label**
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%201.jpg)
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%202.jpg)
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%203.jpg)
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%204.jpg)
+
+**Step 5: Make PMID a clear feature**
+![alt tag]()
+
+**Step 6: Hash Features and run expierment**
+![alt tag]()
+
+**Step 7: Project Features**
+![alt tag]()
 
 ## Train Model##
 - Train/Test Split
