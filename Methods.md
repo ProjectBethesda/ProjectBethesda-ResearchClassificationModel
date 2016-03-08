@@ -1,4 +1,4 @@
-#Classifing Mendilian Medical Literature With Azure ML#
+#Classifing Mendelian Medical Literature With Azure ML#
 
 ##Prerequisites##
 * [Download Mendelian Pubmed Dataset] (https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/datasets/Project%20Bethesda%20DataSet%20Normalized.csv)
