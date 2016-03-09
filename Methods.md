@@ -29,7 +29,7 @@
 ##2. Getting Data into an Experiment##
 
 ***Step 1: Navigate to the Datasets tab in ML Studio and Click New***
-![alt tag]()
+![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/Datasetsnew.jpg)
 
 ***Step 2: Select from local file***
 
@@ -129,9 +129,15 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/stop%20words%20and%20python.jpg)
 
 *** Step 3: Make TwoClassLabel a label***
+ * Expand the Data Transformation and Manipulation tabs and drag a 'Metadata Editor' Module into the experiment.
+ * Link the 'Metadata Editor' Module to the python script Module
+ * Click the select modules button
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%201.jpg)
+ * Select the TwoClassLabel feature and add it to the list
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%202.jpg)
+ * Click the check mark
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%203.jpg)
+* Change the fields property to "Label"
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%204.jpg)
 
 *** Step 4: Make PMID a clear feature***
@@ -193,5 +199,3 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/samplecode.jpg)
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/samplecode1.jpg)
 
-![alt tag]()
-![alt tag]()
