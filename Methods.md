@@ -125,7 +125,7 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
     return dataframe1,
     
 ```
- * Link the modules as follows and run the expierment 
+* Link the modules as follows and run the expierment 
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/stop%20words%20and%20python.jpg)
 
 *** Step 3: Make TwoClassLabel a label***
@@ -139,8 +139,8 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%203.jpg)
 * Change the fields property to "Label" this means that the feature is a category.
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%204.jpg)
-
-*** Step 4: Make PMID a clear feature***
+ 
+ *** Step 4: Make PMID a clear feature***
 * Expand the Data Transformation and Manipulation tabs and drag a *second* 'Metadata Editor' Module into the experiment. This will allow you to classify by article abstract and title while using the PMID as an identifier
 * Link the new 'Metadata Editor' Module to the previous Metadata Editor Module
 * Click the select modules button
@@ -151,11 +151,8 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 * Since there is little to no coorelation between pmid number and research type this allows us to identify our nodes without while reducing the noise in our model
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/pmid2.jpg)
 
-*** Step 5: Hash Features and run expierment***
-
-* Up to this point we have been dealing with strings as features. Strings are more resource intensive than to numbers to process. 
-* The best way to address this is by bagging the words our normalized strings and then hashing them into numerical features
-* While the new features have a 1-1 corespondence hashing is a one way function the trade off for the perfomance we gain from numerical features is that we will not know which "word bags" or statistical couplings of words are which. However we do know that the features will acurately represent out data.
+ *** Step 5: Hash Features and run expierment***
+ Up to this point we have been dealing with strings as features. Strings are more resource intensive than to numbers to process. The best way to address this is by bagging the words our normalized strings and then hashing them into numerical features. While the new features have a 1-1 corespondence hashing is a one way function the trade off for the perfomance we gain from numerical features is that we will not know which "word bags" or statistical couplings of words are which. However we do know that the features will acurately represent out data.
 * Expand the Text Analytics tab and drag the 'Feature Hashing' Module into the expierment
 * Connect the 'Feature Hashing' Module to the previous 'Metadata editore'
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing.jpg)
