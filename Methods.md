@@ -14,7 +14,7 @@
 5. **Put Into Production**
 
 ##1. Setup Workspace##
-***Step 1: Navigate to ML tab in Azure Portal***
+***Step 1: Navigate to ML tab in Azure Portal and Click New***
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/Create%20New%20Workspace.jpg)
 
 ***Step 2: Create an ML Workspace***
