@@ -141,7 +141,7 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%204.jpg)
 
 *** Step 4: Make PMID a clear feature***
-* Expand the Data Transformation and Manipulation tabs and drag a *second* 'Metadata Editor' Module into the experiment.
+* Expand the Data Transformation and Manipulation tabs and drag a *second* 'Metadata Editor' Module into the experiment. This will allow you to classify by article abstract and title while using the PMID as an identifier
 * Link the new 'Metadata Editor' Module to the previous Metadata Editor Module
 * Click the select modules button
 * Select the pmid feature and add it to the list
@@ -152,7 +152,12 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/pmid2.jpg)
 
 *** Step 5: Hash Features and run expierment***
-&&
+
+* Up to this point we have been dealing with strings as features. Strings are more resource intensive than to numbers to process. 
+* The best way to address this is by bagging the words our normalized strings and then hashing them into numerical features
+* While the new features have a 1-1 corespondence hashing is a one way function the trade off for the perfomance we gain from numerical features is that we will not know which "word bags" or statistical couplings of words are which. However we do know that the features will acurately represent out data.
+* Expand the Text Analytics tab and drag the 'Feature Hashing' Module into the expierment
+* Connect the 'Feature Hashing' Module to the previous 'Metadata editore'
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing.jpg)
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing2.jpg)
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing3.jpg)
@@ -190,7 +195,7 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/set%20up%20predictive%20webservice.jpg)
 
 *** Step 2: Project service inputs ***
-* this will allow you to classify by article abstract and title while using the PMID as an identifier
+
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/project%20service%20inputs.jpg)
 
 *** Step 3: Project service outputs and run predictive expirement***
