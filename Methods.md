@@ -1,4 +1,4 @@
-#Classifing Mendelian Medical Literature With Azure ML#
+#Classifing Mendelian Medical Literature With Azure Machine Learning Studio#
 
 ##Prerequisites##
 * [Download Mendelian Pubmed Dataset] (https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/datasets/Project%20Bethesda%20DataSet%20Normalized.csv)
@@ -137,14 +137,22 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%202.jpg)
  * Click the check mark
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%203.jpg)
-* Change the fields property to "Label"
+* Change the fields property to "Label" this means that the feature is a category.
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%204.jpg)
 
 *** Step 4: Make PMID a clear feature***
+* Expand the Data Transformation and Manipulation tabs and drag a *second* 'Metadata Editor' Module into the experiment.
+* Link the new 'Metadata Editor' Module to the previous Metadata Editor Module
+* Click the select modules button
+* Select the pmid feature and add it to the list
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/pmid1.jpg)
+* Change the fields property to "Clear Feature" 
+* Clear features are passed through the ML pipeline but are not processed by any of the other modules in the expierment
+* Since there is little to no coorelation between pmid number and research type this allows us to identify our nodes without while reducing the noise in our model
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/pmid2.jpg)
 
 *** Step 5: Hash Features and run expierment***
+&&
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing.jpg)
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing2.jpg)
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing3.jpg)
