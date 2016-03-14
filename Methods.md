@@ -15,16 +15,18 @@
 
 ##1. Setup Workspace##
 **Step 1: Navigate to ML tab in Azure Portal and Click New**
-<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/Create%20New%20Workspace.jpg"/>
+
+<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/Create%20New%20Workspace.jpg" width="70%" />
 
 **Step 2: Create an ML Workspace**
 * Choose a unique Workspace name
 * Associate a pre-existing storage account or follow the steps to create your own.
 * Select the South Central U.S. Datacenter
-<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/Create%20New%20Workspace1.jpg"/>
+<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/Create%20New%20Workspace1.jpg" width="70%"/>
 
 **Step 3: Sign into ML Studio**
-<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/signInToMLStudio.jpg"/>
+
+<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/signInToMLStudio.jpg" width="60%"/>
 
 ##2. Getting Data into an Experiment##
 
