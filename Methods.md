@@ -198,7 +198,7 @@ Up to this point we have been dealing with strings as features. Strings are more
 **Step 1: Set up Predictive Webservice**
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/set%20up%20predictive%20webservice.jpg"/>
 
-**Step 2: Project service inputs **
+**Step 2: Project service inputs**
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/project%20service%20inputs.jpg"/>
 
 **Step 3: Project service outputs and run predictive expirement**
