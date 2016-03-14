@@ -196,7 +196,6 @@ Up to this point we have been dealing with strings as features. Strings are more
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/set%20up%20predictive%20webservice.jpg)
 
 **Step 2: Project service inputs **
-
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/project%20service%20inputs.jpg)
 
 **Step 3: Project service outputs and run predictive expirement**
@@ -207,9 +206,12 @@ Up to this point we have been dealing with strings as features. Strings are more
 
 **Step 5: Test webservice**
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/test1.jpg)
+
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/test2.jpg)
 
 **Step 6: Get code for webservice**
+
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/samplecode.jpg)
+
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/samplecode1.jpg)
 
