@@ -192,7 +192,7 @@ Up to this point we have been dealing with strings as features. Strings are more
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/ProjectBethesdaML%20Results.png)
 
 ##5. Put Into Production##
-**Step 1: Set up Predictive Webservice
+**Step 1: Set up Predictive Webservice**
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/set%20up%20predictive%20webservice.jpg)
 
 **Step 2: Project service inputs **
