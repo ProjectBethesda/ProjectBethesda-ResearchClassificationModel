@@ -128,7 +128,7 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 * Link the modules as follows and run the expierment 
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/stop%20words%20and%20python.jpg)
 
-**Step 3: Make TwoClass a feature
+**Step 3: Make TwoClass a feature**
 
  * Expand the Data Transformation and Manipulation tabs and drag a 'Metadata Editor' Module into the experiment.
  * Link the 'Metadata Editor' Module to the python script Module
