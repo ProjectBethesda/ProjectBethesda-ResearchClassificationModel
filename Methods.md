@@ -51,19 +51,20 @@
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/newExpierment.jpg"/>
 
 **Step 5: Create a New Blank Experiment**
+
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/newExpierment1.jpg"/>
 
-**Step 6: Name the Experiment **
-* Rename the experiment to Bethesda
+**Step 6: Name the Experiment**
+ * Rename the experiment to Bethesda
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/nameExpierment1.jpg"/>
 
 **Step 7: Drag the dataset into the expierment**
-* Expand Saved Datasets -> My Datasets and Drag our data on to the page
+ * Expand Saved Datasets -> My Datasets and Drag our data on to the page
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/dragDataSet.jpg"/>
 
 **Step 8: Visualize your dataset**
-* Right Click the Bottom of Dataset and Select Visualize
-* Visualizing a dataset allows you to see useful analytics and gauge relationships between features.
+ * Right Click the Bottom of Dataset and Select Visualize
+ * Visualizing a dataset allows you to see useful analytics and gauge relationships between features.
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/visualize.jpg"/>
 
 
