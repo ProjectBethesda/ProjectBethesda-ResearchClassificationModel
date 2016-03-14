@@ -128,7 +128,7 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 * Link the modules as follows and run the expierment 
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/stop%20words%20and%20python.jpg)
 
-** Step 3: Make TwoClassLabel a label**
+**
 
  * Expand the Data Transformation and Manipulation tabs and drag a 'Metadata Editor' Module into the experiment.
  * Link the 'Metadata Editor' Module to the python script Module
@@ -163,27 +163,27 @@ Up to this point we have been dealing with strings as features. Strings are more
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing2.jpg)
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing3.jpg)
 
-** Step 6: Project Features**
+**Step 6: Project Features**
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featureselectionprojection.jpg)
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featureselectionprojection2.jpg)
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featureselectionprojection3.jpg)
 
 ##4. Train Model##
-** Step 1: Train/Test Split**
+**Step 1: Train/Test Split**
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/testtrainsplit.jpg)
 
-** Step 2: Drag in One Vs All Classifier**
+**Step 2: Drag in One Vs All Classifier**
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/onevsall.jpg)
 
-** Step 3: Configure Two Class Decision Tree**
+**Step 3: Configure Two Class Decision Tree**
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/decison%20tree.jpg)
 
-** Step 4: Train Model**
+**Step 4: Train Model**
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/train1.jpg)
 
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/train2.jpg)
 
-** Step 5: Score and Evaluate Model**
+**Step 5: Score and Evaluate Model**
 * drag score module into expierment
 * link trained model and test set to to the score module 
 * drag the evaluate module to the expierment and link the score module
@@ -192,24 +192,24 @@ Up to this point we have been dealing with strings as features. Strings are more
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/ProjectBethesdaML%20Results.png)
 
 ##5. Put Into Production##
-** Step 1: Set up Predictive Webservice
+**Step 1: Set up Predictive Webservice
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/set%20up%20predictive%20webservice.jpg)
 
-** Step 2: Project service inputs **
+**Step 2: Project service inputs **
 
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/project%20service%20inputs.jpg)
 
-** Step 3: Project service outputs and run predictive expirement**
+**Step 3: Project service outputs and run predictive expirement**
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/project%20service%20outputs.jpg)
 
-** Step 4: Deploy Webservice**
+**Step 4: Deploy Webservice**
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/deploy%20as%20web%20service.jpg)
 
-** Step 5: Test webservice**
+**Step 5: Test webservice**
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/test1.jpg)
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/test2.jpg)
 
-** Step 6: Get code for webservice**
+**Step 6: Get code for webservice**
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/samplecode.jpg)
 ![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/samplecode1.jpg)
 
