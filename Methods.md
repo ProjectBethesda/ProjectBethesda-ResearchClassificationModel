@@ -15,25 +15,25 @@
 
 ##1. Setup Workspace##
 **Step 1: Navigate to ML tab in Azure Portal and Click New**
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/Create%20New%20Workspace.jpg)
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/Create%20New%20Workspace.jpg”/>
 
 **Step 2: Create an ML Workspace**
 * Choose a unique Workspace name
 * Associate a pre-existing storage account or follow the steps to create your own.
 * Select the South Central U.S. Datacenter
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/Create%20New%20Workspace1.jpg)
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/Create%20New%20Workspace1.jpg”/>
 
 **Step 3: Sign into ML Studio**
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/signInToMLStudio.jpg)
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/signInToMLStudio.jpg”/>
 
 ##2. Getting Data into an Experiment##
 
 **Step 1: Navigate to the Datasets tab in ML Studio and Click New**
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/Datasetsnew.jpg)
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/Datasetsnew.jpg”/>
 
 **Step 2: Select from local file**
 
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/newDataset1.jpg)
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/newDataset1.jpg”/>
 
 **Step 3: Upload Datasets**
 
@@ -43,26 +43,26 @@
 * Click the Checkmark
 * Upload stopwords.csv using the same process
 
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/newDataset2.jpg)
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/newDataset2.jpg”/>
 
 **Step 4: Navigate to the Experiments tab in ML Studio and Click New**
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/newExpierment.jpg)
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/newExpierment.jpg”/>
 
 **Step 5: Create a New Blank Experiment**
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/newExpierment1.jpg)
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/newExpierment1.jpg”/>
 
 **Step 6: Name the Experiment **
 * Rename the experiment to Bethesda
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/nameExpierment1.jpg)
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/nameExpierment1.jpg”/>
 
 **Step 7: Drag the dataset into the expierment**
 * Expand Saved Datasets -> My Datasets and Drag our data on to the page
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/dragDataSet.jpg)
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/dragDataSet.jpg”/>
 
 **Step 8: Visualize your dataset**
 * Right Click the Bottom of Dataset and Select Visualize
 * Visualizing a dataset allows you to see useful analytics and gauge relationships between features.
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/visualize.jpg)
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/visualize.jpg”/>
 
 
 ##3. Feature Selection ##
@@ -79,7 +79,7 @@
    from t1;
 ```
  * Connect the module as follows 
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/sql%20transformation.jpg)
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/sql%20transformation.jpg”/>
 
 **Step 2: Normalization**
  * Drag Stopwords dataset into the expierment
@@ -126,20 +126,20 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
     
 ```
 * Link the modules as follows and run the expierment 
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/stop%20words%20and%20python.jpg)
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/stop%20words%20and%20python.jpg”/>
 
 **Step 3: Make TwoClass a feature**
 
  * Expand the Data Transformation and Manipulation tabs and drag a 'Metadata Editor' Module into the experiment.
  * Link the 'Metadata Editor' Module to the python script Module
  * Click the select modules button
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%201.jpg)
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%201.jpg”/>
  * Select the TwoClassLabel feature and add it to the list
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%202.jpg)
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%202.jpg”/>
  * Click the check mark
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%203.jpg)
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%203.jpg”/>
  * Change the fields property to "Label" this means that the feature is a category.
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%204.jpg)
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%204.jpg”/>
  
 **Step 4: Make PMID a clear feature**
 
@@ -147,71 +147,71 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 * Link the new 'Metadata Editor' Module to the previous Metadata Editor Module
 * Click the select modules button
 * Select the pmid feature and add it to the list
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/pmid1.jpg)
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/pmid1.jpg”/>
 
 * Change the fields property to "Clear Feature" 
 * Clear features are passed through the ML pipeline but are not processed by any of the other modules in the expierment
 * Since there is little to no coorelation between pmid number and research type this allows us to identify our nodes without while reducing the noise in our model
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/pmid2.jpg)
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/pmid2.jpg”/>
 
 **Step 5: Hash Features and run expierment**
 
 Up to this point we have been dealing with strings as features. Strings are more resource intensive than to numbers to process. The best way to address this is by bagging the words our normalized strings and then hashing them into numerical features. While the new features have a 1-1 corespondence hashing is a one way function the trade off for the perfomance we gain from numerical features is that we will not know which "word bags" or statistical couplings of words are which. However we do know that the features will acurately represent out data.
 * Expand the Text Analytics tab and drag the 'Feature Hashing' Module into the expierment
 * Connect the 'Feature Hashing' Module to the previous 'Metadata editore'
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing.jpg)
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing2.jpg)
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing3.jpg)
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing.jpg”/>
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing2.jpg”/>
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing3.jpg”/>
 
 **Step 6: Project Features**
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featureselectionprojection.jpg)
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featureselectionprojection2.jpg)
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featureselectionprojection3.jpg)
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featureselectionprojection.jpg”/>
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featureselectionprojection2.jpg”/>
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featureselectionprojection3.jpg”/>
 
 ##4. Train Model##
 **Step 1: Train/Test Split**
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/testtrainsplit.jpg)
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/testtrainsplit.jpg”/>
 
 **Step 2: Drag in One Vs All Classifier**
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/onevsall.jpg)
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/onevsall.jpg”/>
 
 **Step 3: Configure Two Class Decision Tree**
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/decison%20tree.jpg)
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/decison%20tree.jpg”/>
 
 **Step 4: Train Model**
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/train1.jpg)
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/train1.jpg”/>
 
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/train2.jpg)
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/train2.jpg”/>
 
 **Step 5: Score and Evaluate Model**
 * drag score module into expierment
 * link trained model and test set to to the score module 
 * drag the evaluate module to the expierment and link the score module
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/score%20evaluate.jpg)
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/score%20evaluate.jpg”/>
 * run the expierment and visualize the evaluate module
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/ProjectBethesdaML%20Results.png)
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/ProjectBethesdaML%20Results.png)
 
 ##5. Put Into Production##
 **Step 1: Set up Predictive Webservice**
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/set%20up%20predictive%20webservice.jpg)
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/set%20up%20predictive%20webservice.jpg”/>
 
 **Step 2: Project service inputs **
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/project%20service%20inputs.jpg)
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/project%20service%20inputs.jpg”/>
 
 **Step 3: Project service outputs and run predictive expirement**
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/project%20service%20outputs.jpg)
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/project%20service%20outputs.jpg”/>
 
 **Step 4: Deploy Webservice**
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/deploy%20as%20web%20service.jpg)
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/deploy%20as%20web%20service.jpg”/>
 
 **Step 5: Test webservice**
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/test1.jpg)
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/test1.jpg”/>
 
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/test2.jpg)
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/test2.jpg”/>
 
 **Step 6: Get code for webservice**
 
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/samplecode.jpg)
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/samplecode.jpg”/>
 
-![alt tag](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/samplecode1.jpg)
+<img src=“https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/samplecode1.jpg”/>
 
