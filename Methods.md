@@ -45,7 +45,7 @@
 * Click the Checkmark
 * Upload stopwords.csv using the same process
 
-<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/newDataset2.jpg"/>
+<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/newDataset2.jpg" height="300px"/>
 
 **Step 4: Navigate to the Experiments tab in ML Studio and Click New**
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/newExpierment.jpg"/>
