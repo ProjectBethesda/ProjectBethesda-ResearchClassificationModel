@@ -56,7 +56,7 @@
 **Step 8: Visualize your dataset**
  * Right Click the Bottom of Dataset and Select Visualize
  * Visualizing a dataset allows you to see useful analytics and gauge relationships between features.
- * 
+ 
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/visualize.jpg" height="300px"/>
 
 
@@ -166,6 +166,7 @@ Up to this point we have been dealing with strings as features. Strings are more
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing3.jpg"/>
 
 **Step 6: Project Features**
+ * 
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featureselectionprojection.jpg"/>
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featureselectionprojection2.jpg"/>
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featureselectionprojection3.jpg"/>
