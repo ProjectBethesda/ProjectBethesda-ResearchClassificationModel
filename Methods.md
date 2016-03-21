@@ -41,6 +41,7 @@
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/newExpierment.jpg"/>
 
 **Step 5: Create a New Blank Experiment**
+
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/newExpierment1.jpg" height="300px"/>
 
 **Step 6: Name the Experiment**
