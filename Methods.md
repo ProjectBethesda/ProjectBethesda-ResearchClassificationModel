@@ -236,9 +236,11 @@ Now that we have converted our dataset into a set of representive features and l
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/project%20service%20outputs.jpg"/>
 
 **Step 4: Deploy Webservice**
+
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/deploy%20as%20web%20service.jpg"/>
 
 **Step 5: Test webservice**
+
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/test1.jpg"/>
 
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/test2.jpg"/>
