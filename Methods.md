@@ -200,6 +200,8 @@ The experiment should look as follows
 
 ##4. Train Model##
 
+Now that we have converted our dataset into a set of representive features and labels it is time to train our model. 
+
 **Step 1: Train/Test Split**
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/testtrainsplit.jpg"/>
 
