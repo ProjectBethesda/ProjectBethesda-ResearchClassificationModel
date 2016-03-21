@@ -150,7 +150,8 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 * Link the new 'Metadata Editor' Module to the previous Metadata Editor Module
 * Click the select modules button
 * Select the pmid feature and add it to the list
-<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/pmid1.jpg"/>
+
+<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/pmid1.jpg" height="300px"/>
 
 * Change the fields property to "Clear Feature" 
 * Clear features are passed through the ML pipeline but are not processed by any of the other modules in the expierment
@@ -163,16 +164,16 @@ Up to this point we have been dealing with strings as features. Strings are more
 * Expand the Text Analytics tab and drag the 'Feature Hashing' Module into the expierment
 * Connect the 'Feature Hashing' Module to the previous 'Metadata editor'
 
-<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing.jpg"/>
+<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing.jpg" height="300px"/>
 
 * Select the normalized column
 
-<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing2.jpg"/>
+<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing2.jpg" height="300px"/>
 
 * Change hashing bitsize to 15
 * Change the n-gram to 4
 
-<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing3.jpg"/>
+<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing3.jpg" height="300px"/>
 
 **Step 6: Project Features**
  
