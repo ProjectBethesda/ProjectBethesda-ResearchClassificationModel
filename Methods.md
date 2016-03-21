@@ -206,7 +206,8 @@ Now that we have converted our dataset into a set of representive features and l
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/testtrainsplit.jpg"/>
 
 **Step 2: Drag in One Vs All Classifier**
-<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/onevsall.jpg"/>
+
+<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/onevsall.jpg" height="450px"/>
 
 **Step 3: Configure Two Class Decision Tree**
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/decison%20tree.jpg"/>
