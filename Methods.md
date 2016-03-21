@@ -25,7 +25,7 @@
 
 **Step 2: Select from local file**
 
-<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/newDataset1.jpg"/>
+<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/newDataset1.jpg" height="300px"/>
 
 **Step 3: Upload Datasets**
 
