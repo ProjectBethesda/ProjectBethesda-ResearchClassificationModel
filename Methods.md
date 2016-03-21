@@ -222,8 +222,10 @@ Now that we have converted our dataset into a set of representive features and l
 * Link trained model and test set to to the score module 
 * Drag the evaluate module to the expierment and link the score module
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/score%20evaluate.jpg"/>
-* Run the expierment and visualize the evaluate module
-<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/ProjectBethesdaML%20Results.png/>
+
+Run the expierment and visualize the evaluate module
+
+<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/ProjectBethesdaML%20Results.png"/>
 
 ##5. Put Into Production##
 **Step 1: Set up Predictive Webservice**
