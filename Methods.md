@@ -167,17 +167,16 @@ Click the check mark
 **Step 5: Hash Features and run expierment**
 
 Up to this point we have been dealing with strings as features. Strings are more resource intensive than to numbers to process. The best way to address this is by bagging the words our normalized strings and then hashing them into numerical features. While the new features have a 1-1 corespondence hashing is a one way function the trade off for the perfomance we gain from numerical features is that we will not know which "word bags" or statistical couplings of words are which. However we do know that the features will acurately represent out data.
-* Expand the Text Analytics tab and drag the 'Feature Hashing' Module into the expierment
-* Connect the 'Feature Hashing' Module to the previous 'Metadata editor'
+
+Expand the Text Analytics tab and drag the 'Feature Hashing' Module into the expierment and connect the 'Feature Hashing' Module to the previous 'Metadata editor'
 
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing.jpg" height="425px"/>
 
-* Select the normalized column
+Select the normalized column
 
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing2.jpg" height="300px"/>
 
-* Change hashing bitsize to 15
-* Change the n-gram to 4
+Change hashing bitsize to 15 the n-gram value to 4
 
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing3.jpg" height="300px"/>
 
