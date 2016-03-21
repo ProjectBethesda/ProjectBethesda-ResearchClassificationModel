@@ -13,9 +13,7 @@
 4. **Benchmark**
 5. **Put Into Production**
 
-##1. Setup Workspace##
-
-**Step 1: Sign into ML Studio**
+##1. Sign into ML Studio##
  * Sign into [Azure ML Studio] (https://studio.azureml.net/) using a microsoft account. 
  * If you do not have an Microsoft account you can register for one [here] (https://signup.live.com/signup.aspx???lcid=1033&wa=wsignin1.0&rpsnv=12&ct=1458589749&rver=6.7.6643.0&wp=MBI_SSL&wreply=https:%2F%2Faccount.microsoft.com%2Fauth%2Fcomplete-signin%3Fru%3Dhttps%253a%252f%252faccount.microsoft.com%252f%253frefd%253daccount.microsoft.com%2526refp%253dhome-about-index&lc=1033&id=292666&lw=1&fl=easi2&mkt=en-US).
 
