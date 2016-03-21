@@ -14,19 +14,11 @@
 5. **Put Into Production**
 
 ##1. Setup Workspace##
-**Step 1: Navigate to ML tab in Azure Portal and Click New**
 
-<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/Create%20New%20Workspace.jpg" width="70%" />
+**Step 1: Sign into ML Studio**
+ * Sign into [Azure ML Studio] (https://studio.azureml.net/) using a microsoft account. 
+ * If you do not have an Microsoft account you can register for one [here] (https://signup.live.com/signup.aspx???lcid=1033&wa=wsignin1.0&rpsnv=12&ct=1458589749&rver=6.7.6643.0&wp=MBI_SSL&wreply=https:%2F%2Faccount.microsoft.com%2Fauth%2Fcomplete-signin%3Fru%3Dhttps%253a%252f%252faccount.microsoft.com%252f%253frefd%253daccount.microsoft.com%2526refp%253dhome-about-index&lc=1033&id=292666&lw=1&fl=easi2&mkt=en-US).
 
-**Step 2: Create an ML Workspace**
-* Choose a unique Workspace name
-* Associate a pre-existing storage account or follow the steps to create your own.
-* Select the South Central U.S. Datacenter
-<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/Create%20New%20Workspace1.jpg" width="70%"/>
-
-**Step 3: Sign into ML Studio**
-
-<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/signInToMLStudio.jpg" width="60%"/>
 
 ##2. Getting Data into an Experiment##
 
@@ -71,7 +63,8 @@
 ##3. Feature Selection ##
 
 **Step 1: Grab Data Using SQL transformation**
- * Drag the SQL sql transformation module into the expierment
+ * We need to use a SQL Transformation to grab the relevant data from our training set to build our model.  
+ * Drag the SQL Transformation module into the expierment
  * Enter the following query into the module
    ```sql
   select 
@@ -85,6 +78,12 @@
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/sql%20transformation.jpg"/>
 
 **Step 2: Normalization**
+ * In this phase we will normalize our data to remove noise from our model the script below will:
+   - Convert all text to lowercase 
+   - Remove Stopwords from NLTK Stopwords Corpus
+   - Remove Standalone numbers (1, 2, 3 but not brca1)
+   - Remove Number Words (one,two, three)
+   - Remove Punctuation (periods, commas, etc)
  * Drag Stopwords dataset into the expierment
  * Drag the python script module into the expierment
  * Put the following python code normalization snipped into the expierment
@@ -192,7 +191,7 @@ Up to this point we have been dealing with strings as features. Strings are more
 * drag the evaluate module to the expierment and link the score module
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/score%20evaluate.jpg"/>
 * run the expierment and visualize the evaluate module
-<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/ProjectBethesdaML%20Results.png)
+<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/ProjectBethesdaML%20Results.png/>
 
 ##5. Put Into Production##
 **Step 1: Set up Predictive Webservice**
