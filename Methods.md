@@ -147,7 +147,8 @@ Click the check mark
 
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%203.jpg" height="425px"/>
 
- * Change the fields property to "Label" this means that the feature is a category.
+Change the fields property to "Label" this means that the feature is a category.
+
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%204.jpg" height="425px"/>
  
 **Step 4: Make PMID a clear feature**
@@ -162,6 +163,7 @@ Click the check mark
 * Change the fields property to "Clear Feature" 
 * Clear features are passed through the ML pipeline but are not processed by any of the other modules in the expierment
 * Since there is little to no coorelation between pmid number and research type this allows us to identify our nodes without while reducing the noise in our model
+
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/pmid2.jpg"/>
 
 **Step 5: Hash Features and run expierment**
@@ -183,12 +185,21 @@ Change hashing bitsize to 15 the n-gram value to 4
 **Step 6: Project Features**
  
  * Next we need to project out the hashed features we generated to train our model  
- 
+
+Expand the 'Data Transformation' and 'Manipulation' tabs and drag the 'Project Features' Module into the expierment and connect it to the previous 'Feature Hashing' Module
+
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featureselectionprojection.jpg"/>
+
+Exclude the 'TextInput' and 'Normalized' columns
+
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featureselectionprojection2.jpg"/>
+
+The experiment should look as follows
+
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featureselectionprojection3.jpg"/>
 
 ##4. Train Model##
+
 **Step 1: Train/Test Split**
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/testtrainsplit.jpg"/>
 
