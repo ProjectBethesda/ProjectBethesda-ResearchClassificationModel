@@ -41,6 +41,7 @@
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/newExpierment.jpg"/>
 
 **Step 5: Create a New Blank Experiment**
+
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/newExpierment1.jpg" height="300px"/>
 
 **Step 6: Name the Experiment**
@@ -127,21 +128,28 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
     return dataframe1,
     
 ```
-* Link the modules as follows and run the expierment 
-<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/stop%20words%20and%20python.jpg"/>
+Link the modules as follows and run the expierment 
+<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/stop%20words%20and%20python.jpg" height="425px"/>
 
 **Step 3: Make TwoClass a feature**
 
  * Expand the Data Transformation and Manipulation tabs and drag a 'Metadata Editor' Module into the experiment.
  * Link the 'Metadata Editor' Module to the python script Module
  * Click the select modules button
-<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%201.jpg"/>
- * Select the TwoClassLabel feature and add it to the list
-<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%202.jpg"/>
- * Click the check mark
-<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%203.jpg"/>
- * Change the fields property to "Label" this means that the feature is a category.
-<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%204.jpg"/>
+ 
+<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%201.jpg" height="425px"/>
+
+Select the TwoClassLabel feature and add it to the list
+
+<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%202.jpg" height="425px"/>
+
+Click the check mark
+
+<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%203.jpg" height="425px"/>
+
+Change the fields property to "Label" this means that the feature is a category.
+
+<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%204.jpg" height="425px"/>
  
 **Step 4: Make PMID a clear feature**
 
@@ -149,34 +157,57 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 * Link the new 'Metadata Editor' Module to the previous Metadata Editor Module
 * Click the select modules button
 * Select the pmid feature and add it to the list
-<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/pmid1.jpg"/>
+
+<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/pmid1.jpg" height="425px"/>
 
 * Change the fields property to "Clear Feature" 
 * Clear features are passed through the ML pipeline but are not processed by any of the other modules in the expierment
 * Since there is little to no coorelation between pmid number and research type this allows us to identify our nodes without while reducing the noise in our model
+
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/pmid2.jpg"/>
 
 **Step 5: Hash Features and run expierment**
 
 Up to this point we have been dealing with strings as features. Strings are more resource intensive than to numbers to process. The best way to address this is by bagging the words our normalized strings and then hashing them into numerical features. While the new features have a 1-1 corespondence hashing is a one way function the trade off for the perfomance we gain from numerical features is that we will not know which "word bags" or statistical couplings of words are which. However we do know that the features will acurately represent out data.
-* Expand the Text Analytics tab and drag the 'Feature Hashing' Module into the expierment
-* Connect the 'Feature Hashing' Module to the previous 'Metadata editore'
-<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing.jpg"/>
-<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing2.jpg"/>
-<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing3.jpg"/>
+
+Expand the Text Analytics tab and drag the 'Feature Hashing' Module into the expierment and connect the 'Feature Hashing' Module to the previous 'Metadata editor'
+
+<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing.jpg" height="425px"/>
+
+Select the normalized column
+
+<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing2.jpg" height="300px"/>
+
+Change hashing bitsize to 15 the n-gram value to 4
+
+<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing3.jpg" height="300px"/>
 
 **Step 6: Project Features**
- * 
+ 
+ * Next we need to project out the hashed features we generated to train our model  
+
+Expand the 'Data Transformation' and 'Manipulation' tabs and drag the 'Project Features' Module into the expierment and connect it to the previous 'Feature Hashing' Module
+
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featureselectionprojection.jpg"/>
+
+Exclude the 'TextInput' and 'Normalized' columns
+
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featureselectionprojection2.jpg"/>
+
+The experiment should look as follows
+
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featureselectionprojection3.jpg"/>
 
 ##4. Train Model##
+
+Now that we have converted our dataset into a set of representive features and labels it is time to train our model. 
+
 **Step 1: Train/Test Split**
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/testtrainsplit.jpg"/>
 
 **Step 2: Drag in One Vs All Classifier**
-<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/onevsall.jpg"/>
+
+<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/onevsall.jpg" />
 
 **Step 3: Configure Two Class Decision Tree**
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/decison%20tree.jpg"/>
@@ -187,11 +218,11 @@ Up to this point we have been dealing with strings as features. Strings are more
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/train2.jpg"/>
 
 **Step 5: Score and Evaluate Model**
-* drag score module into expierment
-* link trained model and test set to to the score module 
-* drag the evaluate module to the expierment and link the score module
+* Drag score module into expierment
+* Link trained model and test set to to the score module 
+* Drag the evaluate module to the expierment and link the score module
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/score%20evaluate.jpg"/>
-* run the expierment and visualize the evaluate module
+* Run the expierment and visualize the evaluate module
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/ProjectBethesdaML%20Results.png/>
 
 ##5. Put Into Production##
@@ -205,9 +236,11 @@ Up to this point we have been dealing with strings as features. Strings are more
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/project%20service%20outputs.jpg"/>
 
 **Step 4: Deploy Webservice**
+
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/deploy%20as%20web%20service.jpg"/>
 
 **Step 5: Test webservice**
+
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/test1.jpg"/>
 
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/test2.jpg"/>
