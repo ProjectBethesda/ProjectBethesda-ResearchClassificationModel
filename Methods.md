@@ -160,13 +160,23 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 
 Up to this point we have been dealing with strings as features. Strings are more resource intensive than to numbers to process. The best way to address this is by bagging the words our normalized strings and then hashing them into numerical features. While the new features have a 1-1 corespondence hashing is a one way function the trade off for the perfomance we gain from numerical features is that we will not know which "word bags" or statistical couplings of words are which. However we do know that the features will acurately represent out data.
 * Expand the Text Analytics tab and drag the 'Feature Hashing' Module into the expierment
-* Connect the 'Feature Hashing' Module to the previous 'Metadata editore'
+* Connect the 'Feature Hashing' Module to the previous 'Metadata editor'
+
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing.jpg"/>
+
+* Select the normalized column
+
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing2.jpg"/>
+
+* Change hashing bitsize to 15
+* Change the n-gram to 4
+
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing3.jpg"/>
 
 **Step 6: Project Features**
- * 
+ 
+ * Next we need to project out the hashed features we generated to train our model  
+ 
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featureselectionprojection.jpg"/>
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featureselectionprojection2.jpg"/>
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featureselectionprojection3.jpg"/>
@@ -187,11 +197,11 @@ Up to this point we have been dealing with strings as features. Strings are more
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/train2.jpg"/>
 
 **Step 5: Score and Evaluate Model**
-* drag score module into expierment
-* link trained model and test set to to the score module 
-* drag the evaluate module to the expierment and link the score module
+* Drag score module into expierment
+* Link trained model and test set to to the score module 
+* Drag the evaluate module to the expierment and link the score module
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/score%20evaluate.jpg"/>
-* run the expierment and visualize the evaluate module
+* Run the expierment and visualize the evaluate module
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/ProjectBethesdaML%20Results.png/>
 
 ##5. Put Into Production##
