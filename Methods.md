@@ -128,21 +128,27 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
     return dataframe1,
     
 ```
-* Link the modules as follows and run the expierment 
-<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/stop%20words%20and%20python.jpg"/>
+Link the modules as follows and run the expierment 
+<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/stop%20words%20and%20python.jpg" height="425px"/>
 
 **Step 3: Make TwoClass a feature**
 
  * Expand the Data Transformation and Manipulation tabs and drag a 'Metadata Editor' Module into the experiment.
  * Link the 'Metadata Editor' Module to the python script Module
  * Click the select modules button
-<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%201.jpg"/>
- * Select the TwoClassLabel feature and add it to the list
-<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%202.jpg"/>
- * Click the check mark
-<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%203.jpg"/>
+ 
+<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%201.jpg" height="425px"/>
+
+Select the TwoClassLabel feature and add it to the list
+
+<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%202.jpg" height="425px"/>
+
+Click the check mark
+
+<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%203.jpg" height="425px"/>
+
  * Change the fields property to "Label" this means that the feature is a category.
-<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%204.jpg"/>
+<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/label%20part%204.jpg" height="425px"/>
  
 **Step 4: Make PMID a clear feature**
 
@@ -151,7 +157,7 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 * Click the select modules button
 * Select the pmid feature and add it to the list
 
-<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/pmid1.jpg" height="300px"/>
+<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/pmid1.jpg" height="425px"/>
 
 * Change the fields property to "Clear Feature" 
 * Clear features are passed through the ML pipeline but are not processed by any of the other modules in the expierment
@@ -164,7 +170,7 @@ Up to this point we have been dealing with strings as features. Strings are more
 * Expand the Text Analytics tab and drag the 'Feature Hashing' Module into the expierment
 * Connect the 'Feature Hashing' Module to the previous 'Metadata editor'
 
-<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing.jpg" height="300px"/>
+<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing.jpg" height="425px"/>
 
 * Select the normalized column
 
