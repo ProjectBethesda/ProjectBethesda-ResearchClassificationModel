@@ -61,7 +61,7 @@
 ##3. Feature Selection ##
 
 **Step 1: Grab Data Using SQL transformation**
- * We need to use a SQL Transformation to grab the relevant data from our training set to build our model.  
+ * We need to use a SQL Transformation to grab the relevant data from our dataset to build our model.  
  * Drag the SQL Transformation module into the expierment
  * Enter the following query into the module
    ```sql
