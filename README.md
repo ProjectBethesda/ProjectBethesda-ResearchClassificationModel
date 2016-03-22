@@ -33,7 +33,7 @@ The DataSet contains Medline Metadata from 2100 Articles categorized  by Dr. Ben
     - Max of 32 Leaves Per a Tree
     - Min of 50 instances per a Leaf
     - Learning Rate of 0.2
-    - 100 Trees
+    - 300 Trees
 
 ##2. Performance Benchmarks##
 
