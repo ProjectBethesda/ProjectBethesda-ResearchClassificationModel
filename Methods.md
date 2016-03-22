@@ -255,6 +255,13 @@ Use the column selector to select the TwoClassLabel Column this will tell the mo
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/project%20service%20inputs.jpg"/>
 
 **Step 3: Project service outputs and run predictive expirement**
+
+ * Drag a 'Project Columns' module into the expirement
+ * Connect the Project Bethesda Data set to the 'Project Columns' module
+ * Click the 'Launch column selector' button and select the PMID, Title, Abstract, Research Phase ID columns
+ * Connect the 'Project Columns' and the 'Web service input' modules to the same port of the Apply SQL Transformation
+ 
+
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/project%20service%20outputs.jpg"/>
 
 **Step 4: Deploy Webservice**
