@@ -11,11 +11,11 @@
 2. **Feature Selection**
 3. **Train Model**
 4. **Benchmark**
-5. **Put Into Production**
+5. **Put into Production**
 
 ##1. Sign into ML Studio##
  * Sign into [Azure ML Studio] (https://studio.azureml.net/) using a microsoft account. 
- * If you do not have an Microsoft account you can register for one [here] (https://signup.live.com/signup.aspx???lcid=1033&wa=wsignin1.0&rpsnv=12&ct=1458589749&rver=6.7.6643.0&wp=MBI_SSL&wreply=https:%2F%2Faccount.microsoft.com%2Fauth%2Fcomplete-signin%3Fru%3Dhttps%253a%252f%252faccount.microsoft.com%252f%253frefd%253daccount.microsoft.com%2526refp%253dhome-about-index&lc=1033&id=292666&lw=1&fl=easi2&mkt=en-US).
+ * If you do not have a Microsoft account you can register for one [here] (https://signup.live.com/signup.aspx???lcid=1033&wa=wsignin1.0&rpsnv=12&ct=1458589749&rver=6.7.6643.0&wp=MBI_SSL&wreply=https:%2F%2Faccount.microsoft.com%2Fauth%2Fcomplete-signin%3Fru%3Dhttps%253a%252f%252faccount.microsoft.com%252f%253frefd%253daccount.microsoft.com%2526refp%253dhome-about-index&lc=1033&id=292666&lw=1&fl=easi2&mkt=en-US).
 
 
 ##2. Getting Data into an Experiment##
@@ -38,18 +38,18 @@
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/newDataset2.jpg" height="300px"/>
 
 **Step 4: Navigate to the Experiments tab in ML Studio and Click New**
-<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/newExpierment.jpg"/>
+<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/newExperiment.jpg"/>
 
 **Step 5: Create a New Blank Experiment**
 
-<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/newExpierment1.jpg" height="300px"/>
+<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/newExperiment1.jpg" height="300px"/>
 
 **Step 6: Name the Experiment**
  * Rename the experiment to Bethesda
  
-<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/nameExpierment1.jpg" height="300px"/>
+<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/nameExperiment1.jpg" height="300px"/>
 
-**Step 7: Drag the dataset into the expierment**
+**Step 7: Drag the dataset into the experiment**
  * Expand Saved Datasets -> My Datasets and Drag our data on to the page
  
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/dragDataSet.jpg" height="300px"/>
@@ -65,7 +65,7 @@
 
 **Step 1: Grab Data Using SQL transformation**
  * We need to use a SQL Transformation to grab the relevant data from our dataset to build our model.  
- * Drag the SQL Transformation module into the expierment
+ * Drag the SQL Transformation module into the experiment
  * Enter the following query into the module
    ```sql
   select 
@@ -83,11 +83,11 @@
    - Convert all text to lowercase 
    - Remove Stopwords from NLTK Stopwords Corpus
    - Remove Standalone numbers (1, 2, 3 but not brca1)
-   - Remove Number Words (one,two, three)
+   - Remove Number Words (one, two, three)
    - Remove Punctuation (periods, commas, etc)
- * Drag Stopwords dataset into the expierment
- * Drag the python script module into the expierment
- * Put the following python code normalization snipped into the expierment
+ * Drag Stopwords dataset into the experiment
+ * Drag the python script module into the experiment
+ * Put the following python code normalization snipped into the experiment
 ```python
 # The script MUST contain a function named azureml_main
 # which is the entry point for this module.
@@ -128,7 +128,7 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
     return dataframe1,
     
 ```
-Link the modules as follows and run the expierment 
+Link the modules as follows and run the experiment 
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/stop%20words%20and%20python.jpg" height="425px"/>
 
 **Step 3: Make TwoClass a feature**
@@ -161,16 +161,16 @@ Change the fields property to "Label" this means that the feature is a category.
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/pmid1.jpg" height="425px"/>
 
 * Change the fields property to "Clear Feature" 
-* Clear features are passed through the ML pipeline but are not processed by any of the other modules in the expierment
-* Since there is little to no coorelation between pmid number and research type this allows us to identify our nodes without while reducing the noise in our model
+* Clear features are passed through the ML pipeline but are not processed by any of the other modules in the experiment
+* Since there is little to no correlation between pmid number and research type this allows us to identify our nodes without while reducing the noise in our model
 
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/pmid2.jpg"/>
 
-**Step 5: Hash Features and run expierment**
+**Step 5: Hash Features and run experiment**
 
-Up to this point we have been dealing with strings as features. Strings are more resource intensive than to numbers to process. The best way to address this is by bagging the words our normalized strings and then hashing them into numerical features. While the new features have a 1-1 corespondence hashing is a one way function the trade off for the perfomance we gain from numerical features is that we will not know which "word bags" or statistical couplings of words are which. However we do know that the features will acurately represent out data.
+Up to this point we have been dealing with strings as features. Strings are more resource intensive than to numbers to process. The best way to address this is by bagging the words our normalized strings and then hashing them into numerical features. While the new features have a 1-1 correspondence hashing is a one way function the tradeoff for the performance we gain from numerical features is that we will not know which "word bags" or statistical couplings of words are which. However, we do know that the features will accurately represent out data.
 
-Expand the Text Analytics tab and drag the 'Feature Hashing' Module into the expierment and connect the 'Feature Hashing' Module to the previous 'Metadata editor'
+Expand the Text Analytics tab and drag the 'Feature Hashing' Module into the experiment and connect the 'Feature Hashing' Module to the previous 'Metadata editor'
 
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featurehashing.jpg" height="425px"/>
 
@@ -186,7 +186,7 @@ Change hashing bitsize to 15 the n-gram value to 4
  
  * Next we need to project out the hashed features we generated to train our model  
 
-Expand the 'Data Transformation' and 'Manipulation' tabs and drag the 'Project Features' Module into the expierment and connect it to the previous 'Feature Hashing' Module
+Expand the 'Data Transformation' and 'Manipulation' tabs and drag the 'Project Features' Module into the experiment and connect it to the previous 'Feature Hashing' Module
 
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featureselectionprojection.jpg"/>
 
@@ -200,7 +200,7 @@ The experiment should look as follows
 
 ##4. Train Model##
 
-Now that we have converted our dataset into a set of representive features and labels it is time to train our model. 
+Now that we have converted our dataset into a set of representative features and labels it is time to train our model. 
 
 **Step 1: Train/Test Split**
 
@@ -218,7 +218,7 @@ Now that we have converted our dataset into a set of representive features and l
 **Step 3: Configure Two Class Decision Tree**
 
 * Drag in a Two Class Decision Tree into the experiment and connect it to the One vs All module
-* Set the properties of the Two Class Decison Tree to the following empirically chosen values:
+* Set the properties of the Two Class Decision Tree to the following empirically chosen values:
   - Max of 32 Leaves Per a Tree
   - Min of 50 instances per a Leaf
   - Learning Rate of 0.2
@@ -228,7 +228,7 @@ Now that we have converted our dataset into a set of representive features and l
 
 **Step 4: Train Model**
 
-Drag and a the 'Train' Module into the experiment and connect it to the 'One Vs All' and 'Split' modules as  shown below.
+Drag and a the 'Train' Module into the experiment and connect it to the 'One Vs All' and 'Split' modules as shown below.
 
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/train1.jpg"/>
 
@@ -237,51 +237,51 @@ Use the column selector to select the TwoClassLabel Column this will tell the mo
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/train2.jpg"/>
 
 **Step 5: Score and Evaluate Model**
-* Drag score module into expierment
-* Link trained model and test set to to the score module 
-* Drag the evaluate module to the expierment and link the score module
+* Drag ‘Score model’module into experiment
+* Link trained model and test set to the ‘Score model’ module 
+* Drag the evaluate module to the experiment and link the score module
 
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/score%20evaluate.jpg"/>
 
-**Step 6: Run the expierment and visualize the evaluate module**
+**Step 6: Run the experiment and visualize the evaluate module**
 
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/ProjectBethesdaML%20Results.png"/>
 
-##5. Put Into Production##
+##5. Put into Production##
 **Step 1: Set up Predictive Webservice**
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/set%20up%20predictive%20webservice.jpg"/>
 
 **Step 2: Project service inputs**
 
 We need to clean our service inputs so that we can classify by just PMID, Abstract and Title
- * Drag a 'Project Columns' module into the expirement
+ * Drag a 'Project Columns' module into the experiment
  * Connect the Project Bethesda Data set to the 'Project Columns' module
  * Click the 'Launch column selector' button and select the PMID, Title, Abstract, Research Phase ID columns
  * Connect the 'Project Columns' and the 'Web service input' modules to the same port of the Apply SQL Transformation
 
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/project%20service%20inputs.jpg"/>
 
-**Step 3: Project service outputs and run predictive expirement**
+**Step 3: Project service outputs and run predictive experiment**
 
 We need to clean our service results so that they don't return thousands of noisy features. 
- * Drag a 'Project Columns' module into the expirement
+ * Drag a 'Project Columns' module into the experiment
  * Connect the 'Score model' module to the 'Project Columns' module
- * Click the 'Launch column selector' button and select the PMID,Scored Labels,Scored Probabilities for Class "0", Scored Probabilities for Class "1",Scored Probabilities for Class "2" columns
- * Connect the 'Web Service Output' to the previous'Project Columns' module
+ * Click the 'Launch column selector' button and select the PMID, Scored Labels, Scored Probabilities for Class "0", Scored Probabilities for Class "1", Scored Probabilities for Class "2" columns
+ * Connect the 'Web Service Output' to the previous 'Project Columns' module
  
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/project%20service%20outputs.jpg"/>
 
-**Step 4: Deploy Webservice**
+**Step 4: Deploy Web service**
 
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/deploy%20as%20web%20service.jpg"/>
 
-**Step 5: Test the Webservice**
+**Step 5: Test the Web service**
 
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/test1.jpg"/>
 
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/test2.jpg"/>
 
-**Step 6: Get code for webservice**
+**Step 6: Get code for Web service**
 
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/samplecode.jpg"/>
 
