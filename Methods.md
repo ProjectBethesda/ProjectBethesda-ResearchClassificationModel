@@ -252,23 +252,30 @@ Use the column selector to select the TwoClassLabel Column this will tell the mo
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/set%20up%20predictive%20webservice.jpg"/>
 
 **Step 2: Project service inputs**
-<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/project%20service%20inputs.jpg"/>
 
-**Step 3: Project service outputs and run predictive expirement**
-
+We need to clean our service inputs so that we can classify by just PMID, Abstract and Title
  * Drag a 'Project Columns' module into the expirement
  * Connect the Project Bethesda Data set to the 'Project Columns' module
  * Click the 'Launch column selector' button and select the PMID, Title, Abstract, Research Phase ID columns
  * Connect the 'Project Columns' and the 'Web service input' modules to the same port of the Apply SQL Transformation
- 
 
+<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/project%20service%20inputs.jpg"/>
+
+**Step 3: Project service outputs and run predictive expirement**
+
+We need to clean our service results so that they don't return thousands of noisy features. 
+ * Drag a 'Project Columns' module into the expirement
+ * Connect the 'Score model' module to the 'Project Columns' module
+ * Click the 'Launch column selector' button and select the PMID,Scored Labels,Scored Probabilities for Class "0", Scored Probabilities for Class "1",Scored Probabilities for Class "2" columns
+ * Connect the 'Web Service Output' to the previous'Project Columns' module
+ 
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/project%20service%20outputs.jpg"/>
 
 **Step 4: Deploy Webservice**
 
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/deploy%20as%20web%20service.jpg"/>
 
-**Step 5: Test webservice**
+**Step 5: Test the Webservice**
 
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/test1.jpg"/>
 
