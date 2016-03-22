@@ -1,6 +1,6 @@
 # Project Bethesda: Research Classification Model
 
-Classifcation model to identify the research phase of a Pubmed article from Medline Metadata. To reproduce the results below using Azure ML **See [Methods]** (https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/Methods.md)
+Classifcation model to identify the research phase of a Pubmed article from Medline Metadata. To reproduce the results below using Azure ML See: [Methods] (https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/Methods.md)
 
 ##Contents##
   1. **Classification Methodology**
