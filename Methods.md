@@ -203,6 +203,12 @@ The experiment should look as follows
 Now that we have converted our dataset into a set of representive features and labels it is time to train our model. 
 
 **Step 1: Train/Test Split**
+
+* Expand the Data Transformation and 'Sample and Split' tabs then drag a 'Split' Module into the experiment
+* Connect the Split Module to the Metadata Editor Module
+* Select the Split Module, and Enter "**0.7**" in the 'Fraction of rows in the first dataset' Field 
+* The left side of the split is our training set the right side will be our test/validation split
+
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/testtrainsplit.jpg"/>
 
 **Step 2: Drag in One Vs All Classifier**
@@ -210,10 +216,23 @@ Now that we have converted our dataset into a set of representive features and l
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/onevsall.jpg" />
 
 **Step 3: Configure Two Class Decision Tree**
+
+* Drag in a Two Class Decision Tree into the experiment and connect it to the One vs All module
+* Set the properties of the Two Class Decison Tree to the following empirically chosen values:
+  - Max of 32 Leaves Per a Tree
+  - Min of 50 instances per a Leaf
+  - Learning Rate of 0.2
+  - 100 Trees
+
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/decison%20tree.jpg"/>
 
 **Step 4: Train Model**
+
+Drag and a the 'Train' Module into the experiment and connect it to the 'One Vs All' and 'Split' modules as  shown below.
+
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/train1.jpg"/>
+
+Use the column selector to select the TwoClassLabel Column this will tell the model what column we are trying to predict.
 
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/train2.jpg"/>
 
@@ -221,9 +240,10 @@ Now that we have converted our dataset into a set of representive features and l
 * Drag score module into expierment
 * Link trained model and test set to to the score module 
 * Drag the evaluate module to the expierment and link the score module
+
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/score%20evaluate.jpg"/>
 
-Run the expierment and visualize the evaluate module
+**Step 6: Run the expierment and visualize the evaluate module**
 
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/ProjectBethesdaML%20Results.png"/>
 
