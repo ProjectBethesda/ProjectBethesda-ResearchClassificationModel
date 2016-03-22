@@ -38,16 +38,16 @@
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/newDataset2.jpg" height="300px"/>
 
 **Step 4: Navigate to the Experiments tab in ML Studio and Click New**
-<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/newExperiment.jpg"/>
+<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/newExpierment.jpg"/>
 
 **Step 5: Create a New Blank Experiment**
 
-<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/newExperiment1.jpg" height="300px"/>
+<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/newExpierment1.jpg" height="300px"/>
 
 **Step 6: Name the Experiment**
  * Rename the experiment to Bethesda
  
-<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/nameExperiment1.jpg" height="300px"/>
+<img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/nameExpierment1.jpg" height="300px"/>
 
 **Step 7: Drag the dataset into the experiment**
  * Expand Saved Datasets -> My Datasets and Drag our data on to the page
