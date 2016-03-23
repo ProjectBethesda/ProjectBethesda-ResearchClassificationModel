@@ -67,6 +67,7 @@
  * We need to use a SQL Transformation to grab the relevant data from our dataset to build our model.  
  * Drag the SQL Transformation module into the experiment
  * Enter the following query into the module
+ 
    ```sql
   select 
   PMID,
@@ -186,7 +187,7 @@ Change hashing bitsize to 15 the n-gram value to 4
  
  * Next we need to project out the hashed features we generated to train our model  
 
-Expand the 'Data Transformation' and 'Manipulation' tabs and drag the 'Project Features' Module into the experiment and connect it to the previous 'Feature Hashing' Module
+Expand the 'Data Transformation' and 'Manipulation' tabs and drag the 'Project Columns' Module into the experiment and connect it to the previous 'Feature Hashing' Module
 
 <img src="https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/media/featureselectionprojection.jpg"/>
 
