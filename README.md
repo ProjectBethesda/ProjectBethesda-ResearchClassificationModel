@@ -3,7 +3,7 @@
 Classifcation model that identifies the research phase of Pubmed articles pertaining to Mendelian Genetics from Medline Metadata. For a walkthrough on how to reproduce the results below using Azure ML [click here](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/Methods.md)
 
 **When using this work please cite:**
-     *Tracking medical genetic literature through machine learning*, Bornstein, Aaron T. et al.Molecular Genetics and Metabolism
+     [*Tracking medical genetic literature through machine learning*, Bornstein, Aaron T. et al.Molecular Genetics and Metabolism] (http://www.ncbi.nlm.nih.gov/pubmed/27268407)
 
 ##Contents##
   1. **Classification Methodology**
