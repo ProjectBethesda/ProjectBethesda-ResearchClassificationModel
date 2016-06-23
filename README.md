@@ -1,6 +1,6 @@
 # Project Bethesda: Research Classification Model
 
-Classifcation model to identify the research phase of a Pubmed article pertaining to Mendelian Genetics from Medline Metadata. For a walkthrough on how to reproduce the results below using Azure ML [click here](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/Methods.md)
+Classifcation model that identifies the research phase of Pubmed articles pertaining to Mendelian Genetics from Medline Metadata. For a walkthrough on how to reproduce the results below using Azure ML [click here](https://github.com/ProjectBethesda/ProjectBethesda-ResearchClassificationModel/blob/master/Methods.md)
 
 ##Contents##
   1. **Classification Methodology**
