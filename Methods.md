@@ -100,7 +100,7 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
     import re
    
 # Create normalized abstract entry 
-    dataframe1["Normalized"]= dataframe1["TextInput"]
+    dataframe1["Normalized"] = dataframe1["TextInput"]
    
     numWords=[ "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen","twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety","hundred", "thousand", "million", "billion", "trillion"] 
   
@@ -110,20 +110,20 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
         #to lower
         abstract = Abstract.lower()
         #remove punctuation
-        abstract =re.findall(r'\w+', abstract,flags = re.UNICODE | re.LOCALE) 
+        abstract = re.findall(r'\w+', abstract,flags = re.UNICODE | re.LOCALE) 
         #remove stand alone numbers
         
         abstract = " ".join([x for x in abstract if not x.isdigit()])
         #remove stand alone numbers and number words    
-        abstract=" ".join(filter(lambda w: not w in numWords ,abstract.split(" ")))    
+        abstract =" ".join(filter(lambda w: not w in numWords ,abstract.split(" ")))    
 
         #remove stop words
-        NormAbs= " ".join(filter(lambda w: not w in set(dataframe2["StopWords"]),abstract.split(" ")))
+        NormAbs = " ".join(filter(lambda w: not w in set(dataframe2["StopWords"]),abstract.split(" ")))
         
        else:
-         NormAbs=''
-         abstract=''
-       dataframe1["Normalized"][i]= str(NormAbs)
+         NormAbs = ''
+         abstract = ''
+       dataframe1["Normalized"][i] = str(NormAbs)
       
     # Return value must be of a sequence of pandas.DataFrame
     return dataframe1,
